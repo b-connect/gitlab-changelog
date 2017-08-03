@@ -10,4 +10,5 @@ if [ ! -e "$DRONE_WORKSPACE/.gitchangelog.rc" ]; then
   export GITCHANGELOG_CONFIG_FILENAME="/.gitchangelog.rc"
 fi
 
-exec gitchangelog > CHANGELOG.md
+cd $DRONE_WORKSPACE
+gitchangelog > CHANGELOG.md
