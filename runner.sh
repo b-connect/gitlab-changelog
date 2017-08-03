@@ -2,11 +2,7 @@
 
 echo "Copy default configuration"
 if [ -z "$DRONE_WORKSPACE" ]; then
-    export DRONE_WORKSPACE="/src"
-fi  
-
-if [ -z "$DRONE_WORKSPACE" ]; then
-    export DRONE_WORKSPACE="/src"
+    export DRONE_WORKSPACE="/"
 fi  
 
 if [ ! -e "$DRONE_WORKSPACE/.gitchangelog.rc" ]; then
@@ -14,4 +10,5 @@ if [ ! -e "$DRONE_WORKSPACE/.gitchangelog.rc" ]; then
   export GITCHANGELOG_CONFIG_FILENAME="/.gitchangelog.rc"
 fi
 
+cd $DRONE_WORKSPACE
 exec gitchangelog > CHANGELOG.md
