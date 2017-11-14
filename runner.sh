@@ -12,3 +12,4 @@ fi
 
 cd $DRONE_WORKSPACE
 gitchangelog > CHANGELOG.md
+exit
